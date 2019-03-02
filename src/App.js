@@ -1,34 +1,43 @@
-import React, { Component } from 'react'; // React and Frameworks
-import './styles/sass/main.scss'  // Stylesheet (Import only Static Stylesheets here)
-import { BrowserRouter, Route } from 'react-router-dom'
-import Home from './Components/Home';
-import DashBoard from './Components/DashBoard.js'
-
+import React, { Component } from "react"; // React and Frameworks
+import "./styles/sass/main.scss"; // Stylesheet (Import only Static Stylesheets here)
+import { BrowserRouter, Route } from "react-router-dom";
+import Home from "./Components/Home";
+import DashBoard from "./Components/DashBoard.js";
 // Apollo Setup
-import ApolloClient from 'apollo-boost';
-import { ApolloProvider } from 'react-apollo';
+import ApolloClient from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+import Guild from "./Components/Guild";
+
+import Blogs from "./Components/Blogs";
+import Activities from "./Components/Activitiesbox";
+
 
 // Apollo Setup ( GraphQL Client )
 const client = new ApolloClient({
-    uri: 'http://localhost:5050/graphql'
+  uri: "http://localhost:5050/graphql"
 });
 
 // import './Styles/materialize.min.scss'  // Stylesheet (Import only Static Stylesheets here)
 
 class App extends Component {
-    render(){
-        return(
-            <ApolloProvider client={client}>
+  render() {
+    return (
+      /*     <ApolloProvider client={client}>
                 <BrowserRouter>
                     <div>
                         <Route exact path = '/' component = { Home }/>
                         <Route path = '/dash' component = { DashBoard }/>
-                        {/* <Route path = '/course/:course_name' component = { Course }/> */}
-                    </div>
+                        {/* <Route path = '/course/:course_name' component = { Course }/> */
+      /*  </div>
                 </BrowserRouter>
-            </ApolloProvider>
-        )
-    }
+            </ApolloProvider>*/
+      <div className="">
+        <Blogs />
+        <Activities />
+
+      </div>
+    );
+  }
 }
 
 export default App;

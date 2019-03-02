@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^3.9.2",
     "@material/form-field": "^0.43.0",
     "@material/textfield": "^0.43.1",
     "apollo-boost": "^0.1.27",
